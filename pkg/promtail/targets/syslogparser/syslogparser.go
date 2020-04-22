@@ -15,7 +15,8 @@ import (
 // detects octet counting.
 // The function returns on EOF or unrecoverable errors.
 func ParseStream(r io.Reader, callback func(res *syslog.Result)) error {
-	buf := bufio.NewReader(r)
+	//buf := bufio.NewReader(r)
+	buf := bufio.NewReaderUTF16(r)
 
 	firstByte, err := buf.Peek(1)
 	if err != nil {

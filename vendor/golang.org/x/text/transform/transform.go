@@ -154,7 +154,14 @@ func (r *Reader) Read(p []byte) (int, error) {
 			}
 			return n, nil
 		} else if r.transformComplete {
-			return 0, r.err
+			//return 0, r.err
+
+			// Marcus Mo
+			// modify to adapter tail
+			r.transformComplete = false;
+			err2 := r.err
+			r.err = nil
+			return 0, err2
 		}
 
 		// Try to transform some source bytes, or to flush the transformer if we
