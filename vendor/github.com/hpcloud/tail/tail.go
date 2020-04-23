@@ -447,12 +447,22 @@ func (tail *Tail) finishDelete() error {
 	}
 }
 
+//func (tail *Tail) openReader() {
+//	if tail.MaxLineSize > 0 {
+//		// add 2 to account for newline characters
+//		tail.reader = bufio.NewReaderSize(tail.file, tail.MaxLineSize+2)
+//	} else {
+//		tail.reader = bufio.NewReader(tail.file)
+//	}
+//}
+
+// Marcus Mo
 func (tail *Tail) openReader() {
 	if tail.MaxLineSize > 0 {
 		// add 2 to account for newline characters
-		tail.reader = bufio.NewReaderSize(tail.file, tail.MaxLineSize+2)
+		tail.reader = bufio.NewReaderSizeUTF16(tail.file, tail.MaxLineSize+2)
 	} else {
-		tail.reader = bufio.NewReader(tail.file)
+		tail.reader = bufio.NewReaderUTF16(tail.file)
 	}
 }
 

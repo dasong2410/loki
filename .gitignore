@@ -23,3 +23,5 @@ dlv
 rootfs/
 dist
 coverage.txt
+
+.idea
