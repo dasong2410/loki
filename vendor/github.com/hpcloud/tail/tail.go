@@ -4,9 +4,9 @@
 package tail
 
 import (
-	"bufio"
 	"errors"
 	"fmt"
+	bufio "github.com/dasong2410/bufio"
 	"io"
 	"io/ioutil"
 	"log"
