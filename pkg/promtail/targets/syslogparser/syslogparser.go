@@ -1,8 +1,8 @@
 package syslogparser
 
 import (
-	"bufio"
 	"fmt"
+	bufio "github.com/dasong2410/bufio"
 	"io"
 
 	"github.com/influxdata/go-syslog/v2"
